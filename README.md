@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Running the App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project can be run using either Bun or Node.js. Here are the steps for both options:
 
-Currently, two official plugins are available:
+**Using Bun**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Ensure you have Bun installed on your system. If not, follow the installation instructions on the [Bun website](https://bun.sh/).
+2. Navigate to the project directory in your terminal and run the following command to install the project dependencies:
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+bun install
 ```
+3. Run the following command to start the development server:
+```
+bun dev
+```
+This will start the server and make the app available at `http://localhost:5173` or link showing at terminal.
+
+**Using Node.js**
+
+1. Ensure you have Node.js installed on your system. If not, follow the installation instructions on the [Node.js website](https://nodejs.org/en/download/).
+2. Navigate to the project directory in your terminal.
+3. Run the following command to install the project dependencies:
+```
+npm install
+```
+4. After the installation is complete, run the following command to start the development server:
+```
+npm run dev
+```
+This will start the server and make the app available at `http://localhost:5173` or link showing at terminal.
+
+**Accessing the App**
+
+Once the server is running, you can access the app by visiting `http://localhost:5173` in your web browser or link showing at terminal.
