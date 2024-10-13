@@ -1,17 +1,4 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaPinterest,
-  FaRedditAlien,
-  FaSnapchatGhost,
-  FaTiktok,
-  FaTwitch,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
-import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import Select, {
   ActionMeta,
   components,
@@ -20,12 +7,12 @@ import Select, {
   SingleValue,
   SingleValueProps,
 } from "react-select";
-import { cn } from "./utils/cn";
+import { cn } from "../utils/cn";
 
 export interface Site {
   id: number;
   label: string;
-  icon: React.ReactElement;
+  icon: string;
   value: string;
   color: string;
 }
@@ -34,84 +21,77 @@ const siteList: Site[] = [
     id: 1,
     label: "Github",
     value: "Github",
-    icon: <FaGithub />,
+    icon: "ti ti-brand-github",
     color: "#333",
   },
   {
     id: 2,
     label: "Facebook",
     value: "Facebook",
-    icon: <FaFacebook />,
+    icon: "ti ti-brand-facebook",
     color: "#1877F2",
   },
   {
     id: 3,
     label: "Linkedin",
     value: "Linkedin",
-    icon: <FaLinkedinIn />,
+    icon: "ti ti-brand-linkedin",
     color: "#0077B5",
   },
   {
     id: 4,
     label: "Instagram",
     value: "Instagram",
-    icon: <FaInstagram />,
+    icon: "ti ti-brand-instagram",
     color: "#E1306C",
   },
   {
     id: 5,
-    label: "X",
-    value: "x",
-    icon: <FaXTwitter />,
+    label: "Twitter",
+    value: "Twitter",
+    icon: "ti ti-brand-twitter",
     color: "#1DA1F2",
   },
   {
     id: 6,
     label: "Youtube",
     value: "Youtube",
-    icon: <FaYoutube />,
+    icon: "ti ti-brand-youtube",
     color: "#FF0000",
   },
   {
     id: 7,
     label: "Reddit",
     value: "Reddit",
-    icon: <FaRedditAlien />,
+    icon: "ti ti-brand-reddit",
     color: "#FF5700",
   },
   {
     id: 8,
     label: "Pinterest",
     value: "Pinterest",
-    icon: <FaPinterest />,
+    icon: "ti ti-brand-pinterest",
     color: "#E60023",
-  },
-  {
-    id: 9,
-    label: "Snapchat",
-    value: "Snapchat",
-    icon: <FaSnapchatGhost />,
-    color: "#FFFC00",
   },
   {
     id: 10,
     label: "Twitch",
     value: "Twitch",
-    icon: <FaTwitch />,
+    icon: "ti ti-brand-twitch",
     color: "#9146FF",
   },
   {
     id: 11,
     label: "WhatsApp",
     value: "WhatsApp",
-    icon: <FaWhatsapp />,
+    icon: "ti ti-brand-whatsapp",
     color: "#25D366",
   },
   {
     id: 12,
     label: "TikTok",
     value: "TikTok",
-    icon: <FaTiktok />,
+    icon: "ti ti-brand-tiktok",
     color: "#000000",
   },
 ];
@@ -124,7 +104,9 @@ const SiteOption: React.FC<OptionProps<Site>> = (props) => {
         "!flex items-center gap-2 hover:bg-primary/10 focus:!border-none",
         props.isSelected && "!bg-primary hover:!bg-primary"
       )}>
-      <span className="">{props.data.icon}</span>
+      <span className="">
+        <i className={props.data.icon}></i>
+      </span>
       {props.data.label}
     </components.Option>
   );
@@ -137,7 +119,9 @@ const SiteSingleValue: React.FC<SingleValueProps<Site>> = (props) => {
       className={cn(
         "!flex items-center dark:text-neutral-20 gap-2 !py-1 !rounded-xl "
       )}>
-      <span className="">{props.data.icon}</span>
+      <span className="">
+        <i className={props.data.icon}></i>
+      </span>
       {props.data.label}
     </components.SingleValue>
   );
